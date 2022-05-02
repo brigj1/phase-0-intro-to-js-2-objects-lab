@@ -1,1 +1,38 @@
-// Write your solution in this file!
+/*
+Let's keep track of a company's employees. We want to store each employee as an Object. We're starting small, so to begin with we'll only keep track of the employee's name and street address.
+
+To start, assign an employee variable to an Object containing name and streetAddress keys; you can use whatever values you like. Use literal syntax to create your Object. Various updates will be applied to this variable (destructively and non-destructively) in this lab.
+
+Once you've initialized the employee Object, you'll need to create the following four functions:
+*/
+
+const employee = {
+    name: 'Fred',
+    streetAddress: '123 Main St, Anytown, XX 99999'
+}
+
+function updateEmployeeWithKeyAndValue(employeeObj, key, value) {
+// updateEmployeeWithKeyAndValue(): this function should take in three arguments: an employee Object, a key and a value. This function should not mutate the employee; it should return a new Object that has an updated value for the key passed in. Hint: use the spread operator!
+    const newEmp = {...employeeObj};
+    newEmp[key] = value;
+    return newEmp;
+}
+
+function destructivelyUpdateEmployeeWithKeyAndValue(employeeObj, key, value) {
+// destructivelyUpdateEmployeeWithKeyAndValue(): this function should work the same as updateEmployeeWithKeyAndValue() but it should mutate the employee Object passed in.
+    employeeObj[key] = value;
+    return employeeObj;
+}
+
+function deleteFromEmployeeByKey(employeeObj, key) {
+// deleteFromEmployeeByKey(): this function should take in a employee Object and a key. It should delete the property with that key from the employee Object. This should not mutate the original employee Object; it should return a new Object that doesn't include the identified key-value pair. Hint: use the spread operator!
+    const newEmp = {...employeeObj};
+    delete newEmp[key];
+    return newEmp;
+}
+
+function destructivelyDeleteFromEmployeeByKey(employeeObj, key) {
+// destructivelyDeleteFromEmployeeByKey(): this function should work the same as deleteFromEmployeeByKey() but it should mutate the employee Object.
+    delete employeeObj[key];
+    return employeeObj;
+}
